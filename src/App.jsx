@@ -1,35 +1,49 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Button, Flex, Layout } from "antd";
+import { useState } from "react";
+import Sidebar from "./components/Sidebar.jsx";
+import CustomHeader from "./components/Header.jsx";
+import MainContent from "./components/MainContent.jsx";
+import SideContent from "./components/SideContent.jsx";
+import { MenuUnfoldOutlined, MenuFoldOutlined } from "@ant-design/icons";
+import "./App.css";
 
-function App() {
-  const [count, setCount] = useState(0)
+const { Sider, Header, Content } = Layout;
+
+const App = () => {
+  const [collapsed, setCollapsed] = useState(false);
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <Layout>
+      <Sider
+        theme="light"
+        trigger={null}
+        collapsed={collapsed}
+        collapsible
+        className="sider"
+      >
+        <Sidebar />
 
-export default App
+        <Button
+          type="text"
+          icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
+          onClick={() => setCollapsed(!collapsed)}
+          className="trigger-btn"
+        />
+      </Sider>
+
+      <Layout>
+        <Header className="header">
+          <CustomHeader />
+        </Header>
+        <Content className="content">
+          <Flex gap="large">
+            <MainContent />
+            <SideContent />
+          </Flex>
+        </Content>
+      </Layout>
+    </Layout>
+  );
+};
+
+export default App;
