@@ -10,7 +10,7 @@ import {
 const CustomHeader = () => {
   return (
     <Flex align="center" justify="space-between">
-      <Typography.Title level={3} type="secondary">
+      <Typography.Title level={3} type="secondary" style={{ fontWeight: 700 }}>
         Welcome back, John
       </Typography.Title>
 

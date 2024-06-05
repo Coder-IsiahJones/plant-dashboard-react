@@ -16,17 +16,19 @@ const ContentSidebar = () => {
           </Typography.Title>
         </Flex>
 
-        {/* <Image
-          src={plant}
-          alt="plant"
-          style={{
-            position: "absolute",
-            bottom: -50,
-            left: 0,
-            height: "200px",
-            width: "auto",
-          }}
-        /> */}
+        {
+          <Image
+            src={plant}
+            alt="plant"
+            style={{
+              position: "absolute",
+              bottom: -30,
+              left: 80,
+              height: "280px",
+              width: "auto",
+            }}
+          />
+        }
       </Card>
     </div>
   );
