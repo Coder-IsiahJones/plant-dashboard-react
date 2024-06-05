@@ -15,7 +15,7 @@ const SellerList = () => {
         </Flex>
 
         <Card>
-          <Flex align="center" justify="space-evenly">
+          <Flex wrap align="center" justify="space-evenly">
             <Avatar.Group
               max={{
                 count: 5,
@@ -58,6 +58,7 @@ const SellerList = () => {
             </Avatar.Group>
 
             <Divider type="vertical" className="divider" />
+
             <Flex vertical="row">
               <Typography.Text type="secondary" strong>
                 1,200 plants sold
@@ -83,7 +84,7 @@ const SellerList = () => {
         </Flex>
 
         <Card>
-          <Flex align="center" justify="space-evenly">
+          <Flex wrap align="center" justify="space-evenly">
             <Avatar.Group
               max={{
                 count: 5,
@@ -126,6 +127,7 @@ const SellerList = () => {
             </Avatar.Group>
 
             <Divider type="vertical" className="divider" />
+
             <Flex vertical="row">
               <Typography.Text type="secondary" strong>
                 2,250 plants sold
